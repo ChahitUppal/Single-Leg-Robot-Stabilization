@@ -1,0 +1,1 @@
+open venv: source mujoco_env/bin/activate

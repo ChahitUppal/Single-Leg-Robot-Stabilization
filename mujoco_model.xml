@@ -1,0 +1,28 @@
+<mujoco model="single_leg">
+    <compiler angle="radian" />
+    <option gravity="0 0 -9.81" />
+    <worldbody>
+        <body name="torso" pos="0 0 1.0">
+            <joint name="root" type="free" />
+            <geom type="sphere" size="0.1" rgba="0.2 0.3 0.8 1"/>
+            <body name="hip" pos="0 0 -0.1">
+                <joint name="hip" type="hinge" axis="1 0 0"/>
+                <geom type="capsule" fromto="0 0 0 0 0 -0.3" size="0.04"/>
+                <body name="knee" pos="0 0 -0.3">
+                    <joint name="knee" type="hinge" axis="1 0 0"/>
+                    <geom type="capsule" fromto="0 0 0 0 0 -0.3" size="0.035"/>
+                    <body name="ankle" pos="0 0 -0.3">
+                        <joint name="ankle" type="hinge" axis="1 0 0"/>
+                        <geom type="capsule" fromto="0 0 0 0 0 -0.2" size="0.03"/>
+                        <site name="foot" pos="0 0 -0.2" size="0.02" />
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <motor joint="hip" ctrlrange="-1 1"/>
+        <motor joint="knee" ctrlrange="-1 1"/>
+        <motor joint="ankle" ctrlrange="-1 1"/>
+    </actuator>
+</mujoco>
