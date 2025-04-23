@@ -1,0 +1,6 @@
+# Ignore virtual environment
+mujoco_env/
+__pycache__/
+*.pyc
+*.pkl
+ppo_logs/
